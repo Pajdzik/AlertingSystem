@@ -1,0 +1,25 @@
+{
+  "name": "alertingsystem",
+  "version": "1.0.0",
+  "description": "Simple alerting system",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install && npx tsc",
+    "prestart": "npm rebuild",
+    "start": "node dist/index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pajdzik/AlertingSystem.git"
+  },
+  "author": "Kamil Pajdzik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pajdzik/AlertingSystem/issues"
+  },
+  "homepage": "https://github.com/Pajdzik/AlertingSystem#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
