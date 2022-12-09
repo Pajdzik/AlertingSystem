@@ -21,5 +21,8 @@
   "homepage": "https://github.com/Pajdzik/AlertingSystem#readme",
   "devDependencies": {
     "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@looker/sdk-node": "^22.20.1"
   }
 }
