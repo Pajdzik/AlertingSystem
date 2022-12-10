@@ -39,7 +39,7 @@ export class NotificationService {
     this.serviceCache = this.inititializeCache(notificationProviders);
   }
 
-  public async notify(alert: Alert, data: Array<Data>) {
+  public async notify(alert: Alert, data: Array<Data>): Promise<void> {
     const dataToNotify = this.dataCache.filterDataToModify(
       alert.query.source,
       data
@@ -53,7 +53,12 @@ export class NotificationService {
     const promises = dataToNotify.map((d) =>
       notificationService?.notify(d, alert.notification.props)
     );
+
     await Promise.all(promises);
+  }
+
+  public async clearStaleDataCache(): Promise<void> {
+    await this.dataCache.clearStaleCache();
   }
 
   private inititializeCache(

@@ -24,7 +24,15 @@ const fetchDataAndRaiseAlerts = async () => {
   }
 };
 
+let cleanupPointer = 1;
+
 for await (const _ of setInterval(10000)) {
   console.log(`${new Date().toLocaleTimeString()}: Executing`);
   await fetchDataAndRaiseAlerts();
+
+  if (cleanupPointer % 100 === 0) {
+    console.log("Cleaning stale cache");
+    notificationService.clearStaleDataCache();
+  }
+  cleanupPointer += 1;
 }
