@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Simple alerting system",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "npm install && npx tsc",
     "prestart": "npm rebuild",
@@ -21,9 +22,11 @@
   "homepage": "https://github.com/Pajdzik/AlertingSystem#readme",
   "devDependencies": {
     "@types/node": "^18.11.12",
+    "@types/object-hash": "^3.0.1",
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@looker/sdk-node": "^22.20.1"
+    "@looker/sdk-node": "^22.20.1",
+    "object-hash": "^3.0.0"
   }
 }

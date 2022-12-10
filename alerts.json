@@ -1,0 +1,44 @@
+[
+  {
+    "query": {
+      "source": "looker",
+      "props": {
+        "model": "thelook_partner",
+        "view": "order_items",
+        "fields": [
+          "order_items.sale_price",
+          "products.category",
+          "products.item_name"
+        ],
+        "filters": {
+          "order_items.sale_price": ">200",
+          "products.category": "Pants"
+        }
+      }
+    },
+    "notification": {
+      "channel": "email",
+      "props": {
+        "emails": ["marketingvp@madeinventive.com"]
+      }
+    }
+  },
+  {
+    "query": {
+      "source": "looker",
+      "props": {
+        "look_id": "3",
+        "filters": {
+          "order_items.sale_price": ">200",
+          "products.category": "Pants"
+        }
+      }
+    },
+    "notification": {
+      "channel": "email",
+      "props": {
+        "emails": ["marketingvp@madeinventive.com"]
+      }
+    }
+  }
+]
